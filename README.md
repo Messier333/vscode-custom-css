@@ -6,4 +6,5 @@ add
     "file:///${env:LOCALAPPDATA}/Programs/Microsoft VS Code/custom/custom.css"
   ]
 }
+```
 to settings.json
