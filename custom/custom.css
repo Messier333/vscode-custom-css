@@ -1,7 +1,109 @@
-.monaco-editor .squiggly-error {
+/********************************************************************
+에디터 내 에러/워닝 밑줄(스퀴글리) 스타일 향상
+ ********************************************************************/
+ .monaco-editor .squiggly-error {
     border: 1px solid red;
     border-bottom-width: 2px;
     border-radius: 3px;
     background: none !important;
-    background-color: RGBA(255, 97, 136, 0.5) !important;
+    background-color: rgba(255, 97, 136, 0.5) !important;
+  }
+  
+  /********************************************************************
+   현재 라인 하이라이트 강조
+   (테마보다 강한 우선순위를 원한다면 !important 사용)
+   ********************************************************************/
+  .monaco-editor .current-line {
+    background-color: rgba(255, 200, 0, 0.1) !important;
+  }
+  
+  /********************************************************************
+   검색 매치(Find Match) 하이라이트 커스텀
+   ********************************************************************/
+  .view-line .findMatch {
+    background-color: rgba(255, 230, 0, 0.4) !important;
+    border-radius: 2px;
+    outline: 1px dashed rgba(255, 230, 0, 0.7);
+  }
+  
+  /********************************************************************
+   Activity Bar (좌측 아이콘 바) 색상 및 Hover 효과
+   ********************************************************************/
+  .activitybar {
+    background-color: #2e2e2e !important;
+    transition: background-color 0.3s ease;
+  }
+  .activitybar:hover {
+    background-color: #383838 !important;
+  }
+  
+  /* 아이콘이 Hover될 때 효과 */
+  .activitybar .action-item:hover .codicon,
+  .activitybar .action-item:hover .mask-icon {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+  }
+  
+  /********************************************************************
+   사이드바 (탐색기, 검색창 등) 배경/스크롤바 스타일
+   ********************************************************************/
+  .sidebar {
+    background-color: #1e1e1e !important;
+  }
+  .sidebar::-webkit-scrollbar {
+    width: 8px;
+  }
+  .sidebar::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 4px;
+  }
+  
+  /********************************************************************
+   편집기 선택 영역 색상
+   ********************************************************************/
+  .monaco-editor .view-line span ::selection,
+  .monaco-editor .view-line ::selection {
+    background-color: rgba(180, 100, 255, 0.4) !important;
+  }
+  
+  /********************************************************************
+   터미널 패널 스타일
+   ********************************************************************/
+  .panel.integrated-terminal {
+    background-color: #121212 !important;
+    color: #dcdcdc !important;
+    /* Scrolling 바꾸기 */
+  }
+  .panel.integrated-terminal::-webkit-scrollbar {
+    height: 8px;
+  }
+  .panel.integrated-terminal::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 4px;
+  }
+  
+  /********************************************************************
+   마우스로 코드 줄 위에 올렸을 때 배경 강조
+   ********************************************************************/
+  .monaco-editor .view-line:hover {
+    background-color: rgba(255, 255, 0, 0.05);
+  }
+  
+  /************************************************************
+ 괄호 매칭 강조 
+ ************************************************************/
+.monaco-editor .bracket-match,
+.monaco-editor .editorBracketMatch {
+  background-color: rgba(199, 120, 255, 0.3) !important; 
+  border: 1px solid rgba(199, 120, 255, 0.7) !important; 
+  border-radius: 2px;
+}
+
+/************************************************************
+ * 커서가 괄호 위에 있을 때 추가로 더 강조
+ ************************************************************/
+.monaco-editor .bracket-match:hover,
+.monaco-editor .editorBracketMatch:hover {
+  background-color: rgba(199, 120, 255, 0.5) !important;
+  border: 1px solid rgba(199, 120, 255, 1) !important;
 }
